@@ -86,6 +86,8 @@ if url:
                 st.write(st.session_state.liabilities)
                 st.subheader("Important considerations that are not common in all T&Cs")
                 st.write(st.session_state.extras)
+                print(st.session_state.child_safety)
+                print(st.session_state.data_privacy)
                
                 logging.info(f"URL: {url}\nSummary: {st.session_state.summary}")
                 # Force responsive layout for columns also on mobile
