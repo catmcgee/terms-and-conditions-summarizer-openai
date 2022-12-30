@@ -1,8 +1,5 @@
 """App which summarizes terms & conditions"""
 
-# Import from standard library
-import logging
-
 # Import from 3rd party libraries
 import streamlit as st
 import streamlit.components.v1 as components
@@ -10,10 +7,6 @@ import streamlit.components.v1 as components
 # Import modules
 import scrape as scr
 import oai
-
-# Configure logger
-logging.basicConfig(format="\n%(asctime)s\n%(message)s", level=logging.INFO, force=True)
-
 
 # Define functions
 def summarize(text: str):
@@ -85,11 +78,8 @@ if url:
                 st.write(st.session_state.liabilities.strip().replace("•", "\n•"))
                 st.subheader("Important considerations that are not common in all T&Cs")
                 st.write(st.session_state.extras.strip().replace("•", "\n•"))
-                print("Child safety:" + st.session_state.child_safety)
-                print("Data privacy:" + st.session_state.data_privacy)
                
-                logging.info(f"URL: {url}\nSummary: {st.session_state.summary}")
-                # Force responsive layout for columns also on mobile
+            # Force responsive layout for columns also on mobile
                 st.write(
                     """<style>
                     [data-testid="column"] {
