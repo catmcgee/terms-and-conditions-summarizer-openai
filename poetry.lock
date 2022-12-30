@@ -532,14 +532,6 @@ category = "main"
 optional = false
 python-versions = ">=3.6"
 
-[[package]]
-name = "streamlit"
-version = "1.15.2"
-description = "The fastest way to build data apps in Python"
-category = "main"
-optional = false
-python-versions = ">=3.7, !=3.9.7"
-
 [package.dependencies]
 altair = ">=3.2.0"
 blinker = ">=1.0.0"
@@ -751,7 +743,6 @@ semver = []
 six = []
 smmap = []
 soupsieve = []
-streamlit = []
 toml = []
 tomli = []
 toolz = []
