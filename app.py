@@ -58,7 +58,7 @@ st.title("Simplify terms & conditions")
 st.markdown(
     """This mini-app scrapes the text from a terms and conditions page, and summarizes them into the main points 
     anyone should know before using an application. It utilizes OpenAI's GPT-3 based [Davinci model](https://beta.openai.com/docs/models/overview). Find me on [Twitter](https://twitter.com/catmcgeecode).  
-    This may take around a minute to run depending on how busy OpenAI is currently."""
+    This may take around a minute to run so please be patient!"""
 )
 
 url = st.text_input(label="Terms & Conditions URL")
