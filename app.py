@@ -19,10 +19,10 @@ logging.basicConfig(format="\n%(asctime)s\n%(message)s", level=logging.INFO, for
 def summarize(text: str):
     """Summarize text."""
     summary_prompt = "\n\nThe above is the terms and conditions for an application. Tell me what company it is and very basic information about what is covered by the T&C. If anything is not covered that is usually covered, mention this.\n\n"
-    child_safety_prompt = "\n\nThe above is the terms and conditions for an application. Tell me up to five things it says about children and age restrictions. Be very specific. Tell me things that do not exist in every company's terms & conditions policies. Provide your answer in bullet points with a line between each point. End bullets with a period. Use this bullet • Provide in HTML format with \n to represent a new line.\n\n"
-    data_privacy_prompt = "\n\nThe above is the terms and conditions for an application. Tell me up to five things it says about data privacy and how data is used by the company, including if it follows GDPR. Be very specific. Tell me things that do not exist in every company's terms & conditions policies. Provide your answer in bullet points with a line between each point. End bullets with a period. Use this bullet •  Provide in HTML format with \n to respresent a new line. \n\n"
-    liabilities_prompt = "\n\nThe above is the terms and conditions for an application. Tell me up to five liabilities that a user faces when using the product. Tell me what is not covered by the terms and conditions. Mention anything about hacks, law enforcement when it comes to privacy, misuse of the platform, and more. Talk about responsibilities the user faces. Be very speific and tell me things that do not exist in every company's terms & conditions policies. Provide your answer in bullet points with a line between each point. End bullets with a period. Use this bullet •  Provide in HTML format with \n to respresent a new line\n\n"
-    extras_prompt = "\n\nThe above is the terms and conditions for an application. Tell me the three biggest takeaways that are of utmost important for all users to know. Be very specific. Focus on things that do not exist in all terms & conditions. Provide your answer in bullet points with a line between each point. End bullets with a period. Use this bullet •  Provide in HTML format with \n to respresent a new line\n\n"
+    child_safety_prompt = "\n\nThe above is the terms and conditions for an application. Tell me up to five things it says about children and age restrictions. Be very specific. Tell me things that do not exist in every company's terms & conditions policies. Provide your answer in bullet points with a line between each point. End bullets with a period. Use this bullet • Provide in HTML format with the correct way to represent a new line.\n\n"
+    data_privacy_prompt = "\n\nThe above is the terms and conditions for an application. Tell me up to five things it says about data privacy and how data is used by the company, including if it follows GDPR. Be very specific. Tell me things that do not exist in every company's terms & conditions policies. Provide your answer in bullet points with a line between each point. End bullets with a period. Use this bullet •  Provide in HTML format with the correct way to respresent a new line. \n\n"
+    liabilities_prompt = "\n\nThe above is the terms and conditions for an application. Tell me up to five liabilities that a user faces when using the product. Tell me what is not covered by the terms and conditions. Mention anything about hacks, law enforcement when it comes to privacy, misuse of the platform, and more. Talk about responsibilities the user faces. Be very speific and tell me things that do not exist in every company's terms & conditions policies. Provide your answer in bullet points with a line between each point. End bullets with a period. Use this bullet •  Provide in HTML format with the correct way to respresent a new line\n\n"
+    extras_prompt = "\n\nThe above is the terms and conditions for an application. Tell me the three biggest takeaways that are of utmost important for all users to know. Be very specific. Focus on things that do not exist in all terms & conditions. Provide your answer in bullet points with a line between each point. End bullets with a period. Use this bullet •  Provide in HTML format with the correct way to respresent a new line\n\n"
 
     openai = oai.Openai()
     flagged = openai.moderate(text)
@@ -79,11 +79,11 @@ if url:
                 st.subheader("Summary")
                 st.write(st.session_state.summary)
                 st.subheader("Child safety")
-                st.markdown(st.session_state.child_safety)
+                st.write(st.session_state.child_safety)
                 st.subheader("Data privacy")
                 st.write(st.session_state.data_privacy)
                 st.subheader("User liabilities and responsibilities")
-                st.markdown(st.session_state.liabilities)
+                st.write(st.session_state.liabilities)
                 st.subheader("Important considerations that are not common in all T&Cs")
                 st.write(st.session_state.extras)
                
