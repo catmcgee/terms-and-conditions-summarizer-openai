@@ -83,9 +83,9 @@ if url:
                 st.subheader("Data privacy")
                 st.write(st.session_state.data_privacy)
                 st.subheader("User liabilities and responsibilities")
-                st.write(st.session_state.liabilities)
+                st.text(st.session_state.liabilities)
                 st.subheader("Important considerations that are not common in all T&Cs")
-                st.write(st.session_state.extras)
+                st.markdown(st.session_state.extras)
                
                 logging.info(f"URL: {url}\nSummary: {st.session_state.summary}")
                 # Force responsive layout for columns also on mobile
