@@ -77,15 +77,15 @@ if url:
             if st.session_state.summary:
                 print(st.session_state.child_safety)
                 st.subheader("Summary")
-                st.text(st.session_state.summary)
+                st.write(st.session_state.summary)
                 st.subheader("Child safety")
-                st.text(st.session_state.child_safety)
+                st.markdown(st.session_state.child_safety)
                 st.subheader("Data privacy")
-                st.text(st.session_state.data_privacy)
+                st.write(st.session_state.data_privacy)
                 st.subheader("User liabilities and responsibilities")
-                st.text(st.session_state.liabilities)
+                st.markdown(st.session_state.liabilities)
                 st.subheader("Important considerations that are not common in all T&Cs")
-                st.text(st.session_state.extras)
+                st.write(st.session_state.extras)
                
                 logging.info(f"URL: {url}\nSummary: {st.session_state.summary}")
                 # Force responsive layout for columns also on mobile
